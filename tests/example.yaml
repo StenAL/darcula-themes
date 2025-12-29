@@ -1,0 +1,68 @@
+# Example YAML file demonstrating theme scopes.
+# Tests keys, quoted strings, unquoted strings, and various values.
+
+name: example-config
+version: "1.0.0"
+description: Example configuration file
+
+# Boolean and null values
+enabled: true
+disabled: false
+optional: null
+
+# Numbers
+count: 42
+ratio: 3.14
+negative: -10
+
+# Unquoted strings (should be white, not green)
+status: active
+environment: production
+simple_value: this is plain text without quotes
+
+# Quoted strings (should be green)
+message: "Hello, World!"
+escaped: "Line 1\nLine 2"
+single_quoted: 'single quotes work too'
+
+# Nested structure
+database:
+  host: localhost
+  port: 5432
+  name: myapp
+  credentials:
+    username: "admin"
+    password: "secret123"
+
+# Lists
+servers:
+  - name: server1
+    host: 192.168.1.1
+    port: 8080
+  - name: server2
+    host: 192.168.1.2
+    port: 8081
+
+# Flow style
+inline_list: [one, two, three]
+inline_map: {key1: value1, key2: value2}
+
+# Multi-line strings
+block_literal: |
+  This is a block literal.
+  Line breaks are preserved.
+  Indentation matters.
+
+block_folded: >
+  This is a block folded string.
+  Line breaks become spaces.
+  Good for long text.
+
+# Anchors and aliases
+defaults: &defaults
+  timeout: 30
+  retries: 3
+
+production:
+  <<: *defaults
+  timeout: 60
