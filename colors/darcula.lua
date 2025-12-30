@@ -74,6 +74,12 @@ hi('PmenuSel', { bg = colors.selection })
 hi('PmenuSbar', { bg = colors.cursor_line })
 hi('PmenuThumb', { bg = colors.dim })
 
+-- Quickfix list
+hi('QuickFixLine', { bg = colors.cursor_line })
+hi('qfFileName', { fg = colors.purple })
+hi('qfLineNr', { fg = colors.dim })
+hi('qfSeparator', { fg = colors.dim })
+
 -- Messages
 hi('ErrorMsg', { fg = colors.red })
 hi('WarningMsg', { fg = colors.amber })
